@@ -7,8 +7,11 @@ import SpaceList from './components/spaceList'
 function App() {
   return (
     <div className="App">
-      <Filter/>
-      <SpaceList/>
+      <header className="header">SpaceX Launch Programs</header>
+      <div className="body-class">
+      <Filter />
+      <SpaceList />
+      </div>
     </div>
   );
 }

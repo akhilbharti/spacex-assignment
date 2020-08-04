@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import {styles} from './styles/filterStyles'
-import { useFetch } from "../fetcher/apiFetcher";
 const years = [
   "2006",
   "2007",
