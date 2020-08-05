@@ -36,41 +36,6 @@ function SpaceList(props) {
    }
     const { loading, launchData } = useFetch(url, param, match);
 
-    // useEffect(() => {
-    //   if(prevParams !== param)
-    //   fetchlaunchData(url,param,res=>{
-    //     console.log('%c⧭', 'color: #e57373', res);
-    //   })
-    // }, [param, prevParams, url])
-  // const[params,setParam] = useState(param)
-  // const fetchData = useCallback(async (source) => {
-  //   try {
-  //     setLoading(true);
-  //     setError({});
-  //     const fetchInitialData = await axios.get(url, {
-  //       params: params,
-  //       cancelToken: source.token,
-  //     });
-  //     setLaunchData(fetchInitialData.data);
-  //   } catch (error) {
-  //      if (axios.isCancel(error)) {
-  //     setError(error);}
-
-  //   } finally {
-  //     setLoading(false);
-  //     setParam({});
-  //   }
-  // }, [url, params]);
-  // useEffect(() => {
-  //     const CancelToken = axios.CancelToken;
-  //     const source = CancelToken.source();
-  //    fetchData(source);
-  //    return () => {
-  //     source.cancel();
-  //    }
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
- 
   const classes = useStyles();
   const spaceLaunches = launchData.map((launch) => {
     return (
