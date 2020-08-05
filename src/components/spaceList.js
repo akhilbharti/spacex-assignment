@@ -2,6 +2,7 @@ import React from "react";
 import SpaceCard from "./spaceCard";
 import SpaceCardSkeleton from './spaceCardSkeleton'
 import { makeStyles } from "@material-ui/core";
+import NoData from "./noData";
 
 const useStyles = makeStyles(theme=>({
   root: {
@@ -17,11 +18,16 @@ const useStyles = makeStyles(theme=>({
 function SpaceList({launchData, loading}) {
 
   const classes = useStyles();
-  const spaceLaunches = launchData ? (Array.isArray(launchData)&&launchData.map((launch) => {
-    return (
-      <SpaceCard key={launch.flight_number} data={launch} loading={loading} />
-    );
-  })):(<div>No Data Available</div>);
+  const spaceLaunches = launchData ? (
+    Array.isArray(launchData) &&
+    launchData.map((launch) => {
+      return (
+        <SpaceCard key={launch.flight_number} data={launch} loading={loading} />
+      );
+    })
+  ) : (
+    <NoData />
+  );
 
 
   const spaceLaunchesSkeleton = Array.from(
