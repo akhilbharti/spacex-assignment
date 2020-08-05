@@ -16,7 +16,7 @@ Hosted on:
 ![Desktopdemo](https://github.com/akhilbharti/spacex-assignment/blob/master/1.png)
 
 > Mobile Version
- ![Mobiledemo]([https://github.com/akhilbharti/spacex-assignment/blob/master/192.168.233.106_5000_launches__luanch__land__year.png](https://github.com/akhilbharti/spacex-assignment/blob/master/192.168.233.106_5000_launches__luanch__land__year.png))
+ ![Mobiledemo](https://github.com/akhilbharti/spacex-assignment/blob/master/192.168.233.106_5000_launches__luanch__land__year.png)
 
 > LightHouse Score
 > ![DesktopLightHouse](https://github.com/akhilbharti/spacex-assignment/blob/master/3.png)
