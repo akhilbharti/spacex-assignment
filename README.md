@@ -2,11 +2,11 @@
 Problem statement**: *Develop a front-end application which would help users list and browse all launches by SpaceX program.*
 Built with:
 
-- [React]([https://reactjs.org/](https://reactjs.org/))
-- [React-Router-Dom]([https://www.npmjs.com/package/react-router-dom](https://www.npmjs.com/package/react-router-dom))
-- [Material-Ui]([https://material-ui.com/](https://material-ui.com/))
+- [React](https://reactjs.org/)
+- [React-Router-Dom]((https://www.npmjs.com/package/react-router-dom)
+- [Material-Ui](https://material-ui.com/](https://material-ui.com/)
 Hosted on:
-- [Netlify]([https://www.netlify.com/](https://www.netlify.com/))
+- [Netlify](https://www.netlify.com/)
 
 ## Demo Preview
 
