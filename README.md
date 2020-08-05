@@ -31,14 +31,21 @@ Hosted on:
 
 ## Getting Started
 
-1. Install dependencies
+1. Clone the Repo
+
+   ```bash
+   git clone https://github.com/akhilbharti/spacex-assignment.git 
+     ```
+
+2. Install dependencies
 
    ```bash
    yarn
    ```
 
-2. Fire up the server and watch files
+3. Fire up the server and watch files
 
    ```bash
    yarn start
    ```
+
