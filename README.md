@@ -3,8 +3,9 @@ Problem statement**: *Develop a front-end application which would help users lis
 Built with:
 
 - [React](https://reactjs.org/)
-- [React-Router-Dom]((https://www.npmjs.com/package/react-router-dom)
-- [Material-Ui](https://material-ui.com/](https://material-ui.com/)
+- [React-Router-Dom](https://www.npmjs.com/package/react-router-dom)
+- [Material-Ui](https://material-ui.com/)
+
 Hosted on:
 - [Netlify](https://www.netlify.com/)
 
