@@ -1,22 +1,18 @@
 import React,{useState} from 'react'
 import Filter from "./filter";
 import SpaceList from "./spaceList";
-import {makeStyles} from '@material-ui/core'
+import {styles} from './styles/spaceAppStyles'
 
-const styles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: "#cad0d6",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    [theme.breakpoints.up("sm")]: {
-      backgroundColor: "#cad0d6",
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "flex-start",
-    },
-  },
-}));
+/*
+ * Space Page component:
+ * Its contains: Filters and SpaceList component
+ *
+ * For SpaceList: Render items for first time through match.parms from react-router-dom
+ * as filter is updated data is passed from filter to spacelist through here
+ * 
+ * For Filters method to set the data is passed from here after making successful
+ * api request data is passed to spaceList for mapping action
+ */
 export default function SpaceApp(props){
   const [spaceData,setSpaceData] = useState(null)
   const [loading, setLoading] = useState(true);

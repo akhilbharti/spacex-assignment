@@ -4,6 +4,7 @@ import { Button, withStyles } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
 import { useRouteMatch, useHistory } from "react-router-dom";
 import { fetchlaunchData } from "../fetcher/fetchdata";
+import { filterOptions } from "../constant";
 
 const ColorButton = withStyles((theme) => ({
   root: {
@@ -22,26 +23,13 @@ const ColorButton = withStyles((theme) => ({
     },
   },
 }))(Button);
-const filterOptions = {
-  boolOptions: ["true", "false"],
-  years: [
-    "2006",
-    "2007",
-    "2008",
-    "2009",
-    "2010",
-    "2011",
-    "2012",
-    "2013",
-    "2014",
-    "2015",
-    "2016",
-    "2017",
-    "2018",
-    "2019",
-    "2020",
-  ],
-};
+
+/*
+ * Filter component:
+ *  year/land/launch handle change and data is updated on
+ *  filter change and latest data from the api is stored in the state 
+ * constant data for year and boolean option is stored in constant.js file
+ */
 
 function Filter(props) {
   const { onUpdateFilterData, onUpdateLoadState } = props;
