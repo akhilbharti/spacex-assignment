@@ -22,9 +22,9 @@ function App() {
           <header className="header">SpaceX Launch Programs</header>
           <Switch>
             <Route exact path="/" >
-              <Redirect to='/launches/:luanch/:land/:year?'/>
+              <Redirect to='/launches/:luanch/:land/:year'/>
             </Route>
-            <Route exact path="/launches/:luanch/:land/:year?" component={SpaceApp}></Route>
+            <Route exact path="/launches/:luanch/:land/:year" component={SpaceApp}></Route>
           </Switch>
           <footer className="footer">Developed by: Akhil Bharti</footer>
         </div>

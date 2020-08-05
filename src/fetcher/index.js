@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import {fetchlaunchData} from './fetchdata'
 // custom hook for performing GET request
 const useFetch = (url, params,match) => {
+  console.log('%c⧭', 'color: #bfffc8', match);
   const [launchData, setlaunchData] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {

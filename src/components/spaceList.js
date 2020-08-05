@@ -34,7 +34,7 @@ function SpaceList(props) {
        land_success: paramVal.land,
      };
    }
-    const { loading, launchData } = useFetch(url, param, match);
+    const { loading, launchData } = useFetch(url, param, match.url);
 
   const classes = useStyles();
   const spaceLaunches = launchData.map((launch) => {
