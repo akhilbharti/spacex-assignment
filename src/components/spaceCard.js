@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme=>({
   media: {
     height: 200,
     backgroundSize:"contain",
+    objectFit: "contain",
   },
   section: {
     display: "flex",
@@ -34,7 +35,6 @@ function SpaceCard(props) {
   const {
     flight_number,
     mission_name,
-    mission_id,
     launch_year,
     launch_success,
     links,
@@ -52,6 +52,7 @@ function SpaceCard(props) {
         <CardMedia
           className={classes.media}
           image={links.mission_patch_small}
+          component="img"
           title={mission_name}
         />
         <CardContent>

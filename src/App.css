@@ -10,17 +10,3 @@
   background-color: #cad0d6;
   padding-left: 30px;
 }
-.body-class {
-  background-color: #cad0d6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@media only screen and (min-width: 600px) {
-  .body-class {
-    background-color: #cad0d6;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-}
