@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { styles } from "./styles/filterStyles";
 import { Button, withStyles } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
 import { useRouteMatch, useHistory } from "react-router-dom";
+import { fetchlaunchData } from "../fetcher/fetchdata";
+
 const ColorButton = withStyles((theme) => ({
   root: {
     color: theme.palette.getContrastText(green[500]),
@@ -42,20 +44,29 @@ const filterOptions = {
 };
 
 function Filter(props) {
+  const { onUpdateFilterData, onUpdateLoadState } = props;
   const classes = styles();
+  const url = `https://api.spacexdata.com/v3/launches`;
   const { years, boolOptions } = filterOptions;
+  const [year, setYear] = useState(null);
+  const [launch, setLaunch] = useState(null);
+  const [landing, setLanding] = useState(null);
+
   const match = useRouteMatch();
   const history = useHistory();
   const handleFilterYearCLick = (selected, type) => () => {
     const paramVal = { ...match.params };
     const uri = match.url.includes(`/launches/`) && `/launches/`;
     if (type === "year") {
+      setYear(selected);
       paramVal.year = selected;
     }
     if (type === "land") {
+      setLanding(selected);
       paramVal.land = selected;
     }
     if (type === "luanch") {
+      setLaunch(selected);
       paramVal.luanch = selected;
     }
     const queryString = Object.values(paramVal);
@@ -64,12 +75,39 @@ function Filter(props) {
 
     history.push(matchUrl);
   };
-  const isActive = (key) => {
-    if (match.params.year === key) {
-      return "active";
+
+  useEffect(() => {
+    let params = { limit: 100 };
+    if (year) {
+      params = { ...params, launch_year: year };
     }
-    return false;
-  };
+    if (launch !== null) {
+      params = { ...params, launch_success: launch };
+    }
+    if (landing !== null) {
+      params = { ...params, land_success: landing };
+    }
+    let ignore = false;
+
+    onUpdateLoadState(true);
+    fetchlaunchData(url, params, (res) => {
+      if(res.length>0){
+
+        if (!ignore) {
+          onUpdateFilterData(res);
+        }
+      }else{
+          onUpdateFilterData(null);       
+      }
+      onUpdateLoadState(false);
+    });
+    return () => {
+      ignore = true;
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [landing, launch, year]);
+
   return (
     <div className={classes.filterList}>
       Filters
@@ -84,7 +122,7 @@ function Filter(props) {
                     variant="contained"
                     color="primary"
                     key={year}
-                    className={isActive(year)}
+                    className={match.params.year === year ? "active" : ""}
                     onClick={handleFilterYearCLick(year, "year")}
                   >
                     {year}

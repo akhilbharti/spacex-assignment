@@ -2,8 +2,7 @@ import React from "react";
 import SpaceCard from "./spaceCard";
 import SpaceCardSkeleton from './spaceCardSkeleton'
 import { makeStyles } from "@material-ui/core";
-import { useRouteMatch } from "react-router-dom";
-import useFetch from '../fetcher'
+
 const useStyles = makeStyles(theme=>({
   root: {
     width: "85%",
@@ -15,33 +14,16 @@ const useStyles = makeStyles(theme=>({
     },
   },
 }));
-function SpaceList(props) {
-  const url = `https://api.spacexdata.com/v3/launches`;
-  const match = useRouteMatch();
-  const paramVal = { ...match.params };
-  let param 
-  if (isNaN(paramVal.year))
-     {
-       param = {
-      limit: 100,
-    }
-  } 
-  else {
-     param = {
-       limit: 100,
-       luanch_year: paramVal.year,
-       luanch_success: paramVal.luanch,
-       land_success: paramVal.land,
-     };
-   }
-    const { loading, launchData } = useFetch(url, param, match.url);
+function SpaceList({launchData, loading}) {
 
   const classes = useStyles();
-  const spaceLaunches = launchData.map((launch) => {
+  const spaceLaunches = launchData ? (Array.isArray(launchData)&&launchData.map((launch) => {
     return (
       <SpaceCard key={launch.flight_number} data={launch} loading={loading} />
     );
-  });
+  })):(<div>No Data Available</div>);
+
+
   const spaceLaunchesSkeleton = Array.from(
     { length: 25 },
     (v, i) => i

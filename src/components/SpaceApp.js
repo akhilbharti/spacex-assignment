@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Filter from "./filter";
 import SpaceList from "./spaceList";
 import {makeStyles} from '@material-ui/core'
@@ -18,11 +18,22 @@ const styles = makeStyles((theme) => ({
   },
 }));
 export default function SpaceApp(props){
+  const [spaceData,setSpaceData] = useState(null)
+  const [loading, setLoading] = useState(true);
+
+  const updateData = (launchData)=>{
+    setSpaceData(launchData)
+  }
+
+
+  const updateLoading = (value) => {
+    setLoading(value);
+  };
   const classes = styles()
   return (
     <div className={classes.root}>
-      <Filter />
-      <SpaceList />
+      <Filter onUpdateFilterData={updateData} onUpdateLoadState = {updateLoading} />
+      <SpaceList launchData={spaceData} loading={loading} />
     </div>
   );
 }
