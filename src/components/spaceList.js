@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from "react";
+import React from "react";
 import SpaceCard from "./spaceCard";
 import SpaceCardSkeleton from './spaceCardSkeleton'
 import { makeStyles } from "@material-ui/core";
@@ -19,15 +19,22 @@ function SpaceList(props) {
   const url = `https://api.spacexdata.com/v3/launches`;
   const match = useRouteMatch();
   const paramVal = { ...match.params };
-  const param = {
-    limit: 100,
-    luanch_year:paramVal.year,
-    luanch_success:paramVal.luanch,
-    land_success:paramVal.land
-  };
-  const { loading, launchData } = useFetch(
-    url,param,match
-    );
+  let param 
+  if (isNaN(paramVal.year))
+     {
+       param = {
+      limit: 100,
+    }
+  } 
+  else {
+     param = {
+       limit: 100,
+       luanch_year: paramVal.year,
+       luanch_success: paramVal.luanch,
+       land_success: paramVal.land,
+     };
+   }
+    const { loading, launchData } = useFetch(url, param, match);
 
     // useEffect(() => {
     //   if(prevParams !== param)

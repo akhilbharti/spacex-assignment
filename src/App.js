@@ -7,6 +7,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect
 } from "react-router-dom";
 
 import theme from './theme'
@@ -20,8 +21,10 @@ function App() {
         <div>
           <header className="header">SpaceX Launch Programs</header>
           <Switch>
-            <Route exact path="/" component={SpaceApp}></Route>
-            <Route exact path="/launches/:limit/:luanch/:land/:year?" component={SpaceApp}></Route>
+            <Route exact path="/" >
+              <Redirect to='/launches/:luanch/:land/:year?'/>
+            </Route>
+            <Route exact path="/launches/:luanch/:land/:year?" component={SpaceApp}></Route>
           </Switch>
         </div>
       </Router>

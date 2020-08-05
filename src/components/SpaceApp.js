@@ -2,7 +2,6 @@ import React from 'react'
 import Filter from "./filter";
 import SpaceList from "./spaceList";
 import {makeStyles} from '@material-ui/core'
-import { useRouteMatch } from "react-router-dom";
 
 const styles = makeStyles((theme) => ({
   root: {
@@ -20,7 +19,6 @@ const styles = makeStyles((theme) => ({
 }));
 export default function SpaceApp(props){
   const classes = styles()
-  const match = useRouteMatch();
   return (
     <div className={classes.root}>
       <Filter />
