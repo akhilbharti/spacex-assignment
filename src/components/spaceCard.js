@@ -7,22 +7,30 @@ import {
   Typography,
   makeStyles,
 } from "@material-ui/core";
-import Skeleton from "@material-ui/lab/Skeleton";
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=>({
   root: {
     maxWidth: 345,
+    padding:"10px",
+    margin:"10px",
+    borderRadius:5,
+     [theme.breakpoints.up("sm")]:{
+       width:"45%"
+     },
+     [theme.breakpoints.up("lg")]:
+   {  width:"22%"}
   },
   media: {
     height: 200,
+    backgroundSize:"contain",
   },
   section: {
     display: "flex",
     marginBottom: "10px",
   },
-});
+}));
 
 function SpaceCard(props) {
-  const {loading,data} = props
+  const {data} = props
   const {
     flight_number,
     mission_name,

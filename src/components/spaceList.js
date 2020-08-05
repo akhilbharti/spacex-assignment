@@ -3,11 +3,17 @@ import axios from "axios";
 import SpaceCard from "./spaceCard";
 import SpaceCardSkeleton from './spaceCardSkeleton'
 import { makeStyles } from "@material-ui/core";
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=>({
   root: {
     width: "85%",
+    [theme.breakpoints.up("sm")]: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "flex-start",
+      flexWrap:"wrap",
+    },
   },
-});
+}));
 function SPaceList(props) {
   const url = `https://api.spacexdata.com/v3/launches`;
   const [launchData, setLaunchData] = useState([]);

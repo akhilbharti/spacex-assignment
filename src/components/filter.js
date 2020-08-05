@@ -44,7 +44,7 @@ function Filter(props){
   // const [year, setYear] = useState("");
   // const [isLaunchSuccess, setIsLaunchSuccess] = useState(true);
   // const [isLandingSuccess, setIsLandingSuccess] = useState(true);
-  const classes = styles(props)
+  const classes = styles()
   const {years, boolOptions} = filterOptions
   const isActive=key=>{
     return "active"

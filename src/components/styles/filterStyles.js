@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/styles";
 
-export const styles = makeStyles({
+export const styles = makeStyles(theme=>({
          filterList: {
            backgroundColor: "rgb(253, 249, 244)",
            border: "1px solid #c2c3c4",
@@ -8,6 +8,9 @@ export const styles = makeStyles({
            width: "80%",
            padding: "30px",
            margin: "10px",
+            [theme.breakpoints.up("sm")]:{
+              width:"auto"
+            }
          },
          filterListWrapper: {
            display: "flex",
@@ -30,4 +33,4 @@ export const styles = makeStyles({
            display:"flex",
            width:100
          },
-       });
+       }));
