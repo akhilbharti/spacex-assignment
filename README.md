@@ -21,11 +21,14 @@ Hosted on:
 ![Desktopdemo](https://github.com/akhilbharti/spacex-assignment/blob/master/1.png)
 
 > Mobile Version
+
  ![Mobiledemo](https://github.com/akhilbharti/spacex-assignment/blob/master/2.png)
 
 > LightHouse Score
-> ![DesktopLightHouse](https://github.com/akhilbharti/spacex-assignment/blob/master/3.png)
-> 
+
+ ![DesktopLightHouse](https://github.com/akhilbharti/spacex-assignment/blob/master/3.png)
+
+
 ## Getting Started
 
 1. Install dependencies
