@@ -10,3 +10,12 @@
   background-color: #cad0d6;
   padding-left: 30px;
 }
+
+.footer {
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #cad0d6;
+  padding-left: 30px;
+  display: flex;
+  justify-content: center;
+}

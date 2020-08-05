@@ -26,6 +26,7 @@ function App() {
             </Route>
             <Route exact path="/launches/:luanch/:land/:year?" component={SpaceApp}></Route>
           </Switch>
+          <footer className="footer">Developed by: Akhil Bharti</footer>
         </div>
       </Router>
     </ThemeProvider>
