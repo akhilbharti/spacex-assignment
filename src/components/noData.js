@@ -1,6 +1,4 @@
 import React from 'react'
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Container from "@material-ui/core/Container";
 import nodata from './nodata.jpg'
   import {makeStyles} from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
@@ -26,11 +24,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
- export default function NoData(props){
+ export default function NoData(){
   const classes = useStyles()
  return (
    <div className={classes.root}>
-     <img className={classes.media} src={nodata} />
+     <img className={classes.media} src={nodata} alt="no data" />
    </div>
  );
 }

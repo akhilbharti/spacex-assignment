@@ -7,36 +7,42 @@ import {
   Typography,
   makeStyles,
 } from "@material-ui/core";
-const useStyles = makeStyles(theme=>({
+const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    padding:"10px",
-    margin:"10px",
-    borderRadius:5,
-     [theme.breakpoints.up("sm")]:{
-       width:"45%"
-     },
-     [theme.breakpoints.up("lg")]:
-   {  width:"22%"}
+    padding: "10px",
+    margin: "10px",
+    borderRadius: 5,
+    [theme.breakpoints.up("sm")]: {
+      width: "45%",
+    },
+    [theme.breakpoints.up("lg")]: { width: "22%" },
   },
   media: {
     height: 200,
-    backgroundSize:"contain",
+    backgroundSize: "contain",
     objectFit: "contain",
   },
   section: {
     display: "flex",
     marginBottom: "10px",
   },
+  listType:{
+    paddingLeft:"24px"
+  },
+  listStyle:{
+    paddingBottom:6
+  }
 }));
 
 function SpaceCard(props) {
-  const {data} = props
+  const { data } = props;
   const {
     flight_number,
     mission_name,
     launch_year,
     launch_success,
+    mission_id,
     links,
     rocket,
   } = data;
@@ -59,6 +65,26 @@ function SpaceCard(props) {
           <Typography gutterBottom variant="h5" component="h2">
             {mission_name}#{flight_number}
           </Typography>
+          <div className={classes.section}>
+            <Typography variant="subtitle2" gutterBottom>
+              Mission Ids:
+            </Typography>
+
+            {mission_id.length > 0 ? (
+              <ul className={classes.listType}>
+                {Array.isArray(mission_id) &&
+                  mission_id.map((id) => (
+                    <li key={id} className={classes.listStyle}>
+                      {id}
+                    </li>
+                  ))}
+              </ul>
+            ) : (
+              <Typography variant="body2" gutterBottom>
+                No Id Available
+              </Typography>
+            )}
+          </div>
           <div className={classes.section}>
             <Typography variant="subtitle2" gutterBottom>
               Launch Year:
