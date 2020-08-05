@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/21a71b04-a0b4-49dc-bc34-fa439a3cc001/deploy-status)](https://app.netlify.com/sites/admiring-fermi-c16276/deploys)
 **PS - XT Coding Assignment
 Problem statement**: *Develop a front-end application which would help users list and browse all launches by SpaceX program.*
 
