@@ -3,7 +3,7 @@
 Problem statement**: *Develop a front-end application which would help users list and browse all launches by SpaceX program.*
 
 **Demo**
-[demo](**Demo**%20!%5BDemo%5D%28https://spacex-assign.netlify.app/launches/:luanch/:land/:year%29)
+[demo](https://admiring-fermi-c16276.netlify.app/launches/:luanch/:land/:year)
 
 
 Built with:
@@ -15,8 +15,6 @@ Built with:
 Hosted on:
 - [Netlify](https://www.netlify.com/)
 
-## Demo Preview
-[Demo](https://admiring-fermi-c16276.netlify.app/launches/:luanch/:land/:year)
 
 > Desktop Version
 
