@@ -16,6 +16,7 @@ Hosted on:
 - [Netlify](https://www.netlify.com/)
 
 ## Demo Preview
+[Demo](https://admiring-fermi-c16276.netlify.app/launches/:luanch/:land/:year)
 
 > Desktop Version
 
