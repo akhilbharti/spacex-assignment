@@ -1,4 +1,12 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/21a71b04-a0b4-49dc-bc34-fa439a3cc001/deploy-status)](https://app.netlify.com/sites/admiring-fermi-c16276/deploys)
+
+# :milky_way: :rocket: SpaceX Launches!
+
+## Description
+This application displays data about SpaceX rocket launches.
+
+Using the SpaceX API: https://api.spacexdata.com/v3/launches.
+
 **PS - XT Coding Assignment
 Problem statement**: *Develop a front-end application which would help users list and browse all launches by SpaceX program.*
 
