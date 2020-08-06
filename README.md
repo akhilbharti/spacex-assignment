@@ -19,6 +19,7 @@ Built with:
 - [React](https://reactjs.org/)
 - [React-Router-Dom](https://www.npmjs.com/package/react-router-dom)
 - [Material-Ui](https://material-ui.com/)
+- [react-cool-img](https://www.npmjs.com/package/react-cool-img)
 
 Hosted on:
 - [Netlify](https://www.netlify.com/)
@@ -32,9 +33,31 @@ Hosted on:
 
  ![Mobiledemo](https://github.com/akhilbharti/spacex-assignment/blob/master/2.png)
 
-> LightHouse Score
+> LightHouse Score(Desktop)
 
  ![DesktopLightHouse](https://github.com/akhilbharti/spacex-assignment/blob/master/3.png)
+
+>LightHouse Score(Mobile)
+
+![MobileLightHouse]()
+
+### Features of application
+* Application Fetches spacex 100 missions details when app is initialized
+* Fiters are provided in the application
+* Single filter and combined filter
+* Filter colour change on selection
+* Material Ui is used for UI framwork to give application a better look.
+* Responsive UI for all kind of device
+* Skeleton Component also added to improve user experience
+
+### Development Approach
+* Used Functional Components with Hooks
+* Sending API calls ony when state changes
+* Used React lazy and Suspense for code spliting on component level with dynamic imports
+### Performance optimization
+* lazy loading of Images implemented for each flight detail added
+* Memoiztion of Components added, 
+* Avoided unncessary API call for the same filter again again.
 
 
 ## Getting Started
