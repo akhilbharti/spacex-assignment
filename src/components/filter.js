@@ -59,7 +59,7 @@ function Filter(props) {
       paramVal.luanch = selected;
     }
     const queryString = Object.values(paramVal);
-    const matchUrl = urlRoot + queryString.join("/");
+    // const matchUrl = urlRoot + queryString.join("/");
     // history.push(matchUrl);
   };
 
