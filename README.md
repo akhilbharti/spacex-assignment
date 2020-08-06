@@ -35,11 +35,11 @@ Hosted on:
 
 > LightHouse Score(Desktop)
 
- ![DesktopLightHouse](https://github.com/akhilbharti/spacex-assignment/blob/master/3.png)
+ ![DesktopLightHouse](https://github.com/akhilbharti/spacex-assignment/blob/master/desktop.png)
 
 >LightHouse Score(Mobile)
 
-![MobileLightHouse]()
+![MobileLightHouse](https://github.com/akhilbharti/spacex-assignment/blob/master/mobile.png)
 
 ### Features of application
 * Application Fetches spacex 100 missions details when app is initialized
