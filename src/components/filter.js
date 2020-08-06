@@ -42,6 +42,7 @@ function Filter(props) {
 
   const match = useRouteMatch();
   const history = useHistory();
+  console.log('%c⧭', 'color: #cc0088', match);
   const handleFilterYearCLick = (selected, type) => () => {
     const paramVal = { ...match.params };
     const uri = match.url.includes(`/launches/`) && `/launches/`;
@@ -58,10 +59,8 @@ function Filter(props) {
       paramVal.luanch = selected;
     }
     const queryString = Object.values(paramVal);
-
-    const matchUrl = uri + queryString.join("/");
-
-    history.push(matchUrl);
+    const matchUrl = urlRoot + queryString.join("/");
+    // history.push(matchUrl);
   };
 
   useEffect(() => {
@@ -103,17 +102,17 @@ function Filter(props) {
         <div className={classes.filterListHeader}>Launch Year</div>
         <div className={classes.filterListContent}>
           {years &&
-            years.map((year) => {
+            years.map((yea) => {
               return (
-                <div key={year} className="classes.yearButton">
+                <div key={yea} className="classes.yearButton">
                   <ColorButton
                     variant="contained"
                     color="primary"
-                    key={year}
-                    className={match.params.year === year ? "active" : ""}
-                    onClick={handleFilterYearCLick(year, "year")}
+                    key={yea}
+                    className={year === yea ? "active" : false}
+                    onClick={handleFilterYearCLick(yea, "year")}
                   >
-                    {year}
+                    {yea}
                   </ColorButton>
                 </div>
               );
@@ -130,7 +129,7 @@ function Filter(props) {
                   variant="contained"
                   color="primary"
                   key={option}
-                  className={match.params.luanch === option ? "active" : ""}
+                  className={launch === option ? "active" : false}
                   onClick={handleFilterYearCLick(option, "luanch")}
                 >
                   {option}
@@ -149,7 +148,7 @@ function Filter(props) {
                   variant="contained"
                   color="primary"
                   key={option}
-                  className={match.params.land === option ? "active" : ""}
+                  className={landing === option ? "active" : false}
                   onClick={handleFilterYearCLick(option, "land")}
                 >
                   {option}
