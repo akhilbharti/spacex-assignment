@@ -104,7 +104,7 @@ function Filter(props) {
           {years &&
             years.map((yea) => {
               return (
-                <div key={yea} className="classes.yearButton">
+                <div key={yea} className={classes.yearButton}>
                   <ColorButton
                     variant="contained"
                     color="primary"
@@ -124,7 +124,7 @@ function Filter(props) {
         <div className={classes.filterListContent}>
           {boolOptions &&
             boolOptions.map((option) => (
-              <div key={option} className="classes.yearButton">
+              <div key={option} className={classes.yearButton}>
                 <ColorButton
                   variant="contained"
                   color="primary"
@@ -143,7 +143,7 @@ function Filter(props) {
         <div className={classes.filterListContent}>
           {boolOptions &&
             boolOptions.map((option) => (
-              <div key={option} className="classes.yearButton">
+              <div key={option} className={classes.yearButton}>
                 <ColorButton
                   variant="contained"
                   color="primary"
