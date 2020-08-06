@@ -125,4 +125,4 @@ function SpaceCard(props) {
   );
 }
 
-export default SpaceCard;
+export default React.memo(SpaceCard);

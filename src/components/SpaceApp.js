@@ -27,9 +27,16 @@ export default function SpaceApp(props){
   };
   const classes = styles()
   return (
-    <div className={classes.root}>
-      <Filter onUpdateFilterData={updateData} onUpdateLoadState = {updateLoading} />
-      <SpaceList launchData={spaceData} loading={loading} />
-    </div>
+    <>
+      <header className={classes.header}>SpaceX Launch Programs</header>
+      <div className={classes.root}>
+        <Filter
+          onUpdateFilterData={updateData}
+          onUpdateLoadState={updateLoading}
+        />
+        <SpaceList launchData={spaceData} loading={loading} />
+      </div>
+      <footer className={classes.footer}>Developed by: Akhil Bharti</footer>
+    </>
   );
 }
