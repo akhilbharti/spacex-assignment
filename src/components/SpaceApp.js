@@ -1,8 +1,8 @@
-import React,{useState} from 'react'
-import Filter from "./filter";
-import SpaceList from "./spaceList";
+import React,{useState, Suspense} from 'react'
 import {styles} from './styles/spaceAppStyles'
 
+const SpaceList = React.lazy(() => import("./spaceList"));
+const Filter = React.lazy(()=> import("./filter"))
 /*
  * Space Page component:
  * Its contains: Filters and SpaceList component
@@ -30,11 +30,13 @@ export default function SpaceApp(props){
     <>
       <header className={classes.header}>SpaceX Launch Programs</header>
       <div className={classes.root}>
+           <Suspense fallback={<div>Loading...</div>}>
         <Filter
           onUpdateFilterData={updateData}
           onUpdateLoadState={updateLoading}
-        />
+          />
         <SpaceList launchData={spaceData} loading={loading} />
+          </Suspense>
       </div>
       <footer className={classes.footer}>Developed by: Akhil Bharti</footer>
     </>
