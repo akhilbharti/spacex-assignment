@@ -6,14 +6,14 @@ import {
   CardMedia,
   Typography,
 } from "@material-ui/core";
-import {useStyles} from './styles/spaceCardStyles'
+import { useStyles } from "./styles/spaceCardStyles";
 
 /* SpaceCard Component: to map the data accordingly
-* the data is recevied via props from spaceList to render individual card component
-*/
+ * the data is recevied via props from spaceList to render individual card component
+ */
 function SpaceCard(props) {
   const { data } = props;
-  // desstructuring of data 
+  // desstructuring of data
   const {
     flight_number,
     mission_name,
@@ -31,7 +31,6 @@ function SpaceCard(props) {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
         {/* mission Image  */}
         <CardMedia
           className={classes.media}
@@ -42,13 +41,17 @@ function SpaceCard(props) {
         <CardContent>
           {/* Mission Name and flight number*/}
           <a href={article_link} target="_blank" rel="noopener noreferrer">
-            <Typography gutterBottom variant="h5">
+            <Typography variant="h6" gutterBottom className={classes.heading}>
               {mission_name}#{flight_number}
             </Typography>
           </a>
           {/* mission Ids */}
           <div className={classes.section}>
-            <Typography variant="subtitle2" gutterBottom>
+            <Typography
+              variant="subtitle2"
+              gutterBottom
+              className={classes.subheader}
+            >
               Mission Ids:
             </Typography>
 
@@ -63,14 +66,22 @@ function SpaceCard(props) {
                   ))}
               </ul>
             ) : (
-              <Typography variant="body2" gutterBottom>
+              <Typography
+                variant="body2"
+                gutterBottom
+                className={classes.subheader}
+              >
                 No Id Available
               </Typography>
             )}
           </div>
           {/* mission launch year */}
           <div className={classes.section}>
-            <Typography variant="subtitle2" gutterBottom>
+            <Typography
+              variant="subtitle2"
+              gutterBottom
+              className={classes.subheader}
+            >
               Launch Year:
             </Typography>
             <Typography variant="body2" gutterBottom>
@@ -79,7 +90,11 @@ function SpaceCard(props) {
           </div>
           {/* Mission launch success */}
           <div className={classes.section}>
-            <Typography variant="subtitle2" gutterBottom>
+            <Typography
+              variant="subtitle2"
+              gutterBottom
+              className={classes.subheader}
+            >
               Successful Launch:
             </Typography>
             <Typography variant="body2" gutterBottom>
@@ -88,7 +103,11 @@ function SpaceCard(props) {
           </div>
           {/* Mission SUccess landing */}
           <div className={classes.section}>
-            <Typography variant="subtitle2" gutterBottom>
+            <Typography
+              variant="subtitle2"
+              gutterBottom
+              className={classes.subheader}
+            >
               Successful Landing:
             </Typography>
             <Typography variant="body2" gutterBottom>
@@ -96,7 +115,6 @@ function SpaceCard(props) {
             </Typography>
           </div>
         </CardContent>
-      </CardActionArea>
     </Card>
   );
 }

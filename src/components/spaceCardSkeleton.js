@@ -38,26 +38,27 @@ function SpaceCardSkeleton(props) {
           <Typography gutterBottom variant="h5" component="h2">
             <Skeleton
               animation="wave"
-              height={10}
+              height={15}
               width="80%"
               style={{ marginBottom: 6 }}
             />
           </Typography>
-          <div className={classes.section}>
-            <Typography variant="body2" gutterBottom>
-              <Skeleton animation="wave" height={10} width="40%" />
-            </Typography>
-          </div>
-          <div className={classes.section}>
-            <Typography variant="body2" gutterBottom>
-              <Skeleton animation="wave" height={10} width="40%" />
-            </Typography>
-          </div>
-          <div className={classes.section}>
-            <Typography variant="body2" gutterBottom>
-              <Skeleton animation="wave" height={10} width="40%" />
-            </Typography>
-          </div>
+          <Typography gutterBottom variant="h5" component="h2">
+            <Skeleton
+              animation="wave"
+              height={10}
+              width="40%"
+              style={{ marginBottom: 6 }}
+            />
+          </Typography>
+          <Typography gutterBottom variant="h5" component="h2">
+            <Skeleton
+              animation="wave"
+              height={10}
+              width="40%"
+              style={{ marginBottom: 6 }}
+            />
+          </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
