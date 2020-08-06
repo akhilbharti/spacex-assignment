@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { styles } from "./styles/filterStyles";
 import { Button, withStyles } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
-import { useRouteMatch, useHistory } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import { fetchlaunchData } from "../fetcher/fetchdata";
 import { filterOptions } from "../constant";
 
@@ -41,11 +41,11 @@ function Filter(props) {
   const [landing, setLanding] = useState(null);
 
   const match = useRouteMatch();
-  const history = useHistory();
+  // const history = useHistory();
   console.log('%c⧭', 'color: #cc0088', match);
   const handleFilterYearCLick = (selected, type) => () => {
     const paramVal = { ...match.params };
-    const uri = match.url.includes(`/launches/`) && `/launches/`;
+    // const uri = match.url.includes(`/launches/`) && `/launches/`;
     if (type === "year") {
       setYear(selected);
       paramVal.year = selected;
@@ -58,7 +58,7 @@ function Filter(props) {
       setLaunch(selected);
       paramVal.luanch = selected;
     }
-    const queryString = Object.values(paramVal);
+    // const queryString = Object.values(paramVal);
     // const matchUrl = urlRoot + queryString.join("/");
     // history.push(matchUrl);
   };
